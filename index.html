@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ApiCats/styles/index.css">
+    <title>Cats Api</title>
+  </head>
+  <body>
+
+    <button id="reload">See Other Cat</button>
+
+    <main>
+      <h1>Michis ramdom Api</h1>
+      <span id="error"></span>
+      <div class="container">
+        <section id="randomMichis">
+          <article>
+            <img id="imgCat_1">
+            <button id="buttonSaveFavorite1">Save favorites</button>
+          </article>
+
+          <article>
+            <img id="imgCat_2">
+            <button id="buttonSaveFavorite2">Save favorites</button>
+          </article>
+
+          <article>
+            <img id="imgCat_3">
+            <button id="buttonSaveFavorite3">Save favorites</button>
+          </article>
+
+        </section>
+        <h1>Michis favorites</h1>
+        <div class="containerFavorites">
+          <section id="favoritesMichis">
+          </section>
+        </div>
+      </div>
+
+      <div id="overlay">
+        <div class="modal">
+          <p id="Messmodal"></p>
+          <button onclick="closeModal()">Cerrar</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="ApiCats/ApiCat.js"></script>
+  </body>
+</html>

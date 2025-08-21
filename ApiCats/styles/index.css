@@ -1,0 +1,133 @@
+body {
+  background-color: rgb(44, 33, 33);
+  color: aliceblue;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.01);
+}
+
+
+
+button {
+  border: none;
+  width: 160px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: blueviolet;
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 10px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+
+#randomMichis,
+#favoritesMichis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+#randomMichis>article {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px 10px 15px;
+}
+
+article>button {
+  margin: 15px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal {
+  background: rgb(2, 12, 39);
+  padding: 35px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  border: none;
+  background: #12d833;
+  color: rgb(15, 4, 4);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background: #8416ce;
+}
+
+p {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+
+@media (max-width: 600px) {
+
+  #randomMichis #favoritesMichis {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  #randomMichis>article {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 10px 0px;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+}
