@@ -1,6 +1,6 @@
 const API_KEY = "live_IdwNAwZoiuOuvHtKRFZoOJCW93KoWCMn8ecJdkdSWNFH7HI7YsYQE7EQ1tol0J5y";
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=3';
-const API_URL_FAVORITES = `https://api.thecatapi.com/v1/favourites?api_key=${API_KEY}`;
+const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites';
 const API_URL_FAVORITES_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}?api_key=${API_KEY}`
 const buttonReload = document.getElementById("reload");
 const spanError = document.getElementById("error");
@@ -52,6 +52,7 @@ const saveFavorites = async (id) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'X-API-KEY': `${API_KEY}`
     },
     body: rawBody
   });
@@ -69,7 +70,15 @@ const saveFavorites = async (id) => {
 
 const loadFavoriteMichis = async () => {
   try {
-    const response = await fetch(API_URL_FAVORITES);
+    const response = await fetch(API_URL_FAVORITES,
+      {
+        method: "GET",
+        headers: {
+          'X-API-KEY': `${API_KEY}`
+        }
+
+      }
+    );
     const data = await response.json();
 
     if (response.status !== 200) {
@@ -100,7 +109,10 @@ const loadFavoriteMichis = async () => {
 const deleteMichis = async (id) => {
 
   const response = await fetch(API_URL_FAVORITES_DELETE(id), {
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: {
+      'X-API-KEY': `${API_KEY}`
+    }
   });
   const data = await response.json();
 
